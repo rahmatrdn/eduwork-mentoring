@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var a, b int
+	var a, b float64
 	var operator, choice string
 	fmt.Println("Aplikasi Kalkulator")
 	fmt.Println("###############################")
@@ -22,13 +22,17 @@ func main() {
 		fmt.Scan(&operator)
 		switch operator {
 		case "+":
-			fmt.Printf("%d + %d = %d\n", a, b, a+b)
+			fmt.Printf("%.2f + %.2f = %.2f\n", a, b, a+b)
 		case "-":
-			fmt.Printf("%d - %d = %d\n", a, b, a-b)
+			fmt.Printf("%.2f - %.2f = %.2f\n", a, b, a-b)
 		case "*":
-			fmt.Printf("%d * %d = %d\n", a, b, a*b)
+			fmt.Printf("%.2f * %.2f = %.2f\n", a, b, a*b)
 		case "/":
-			fmt.Printf("%d / %d = %d\n", a, b, a/b)
+			if b != 0 {
+				fmt.Printf("%.2f / %.2f = %.2f\n", a, b, a/b)
+			} else {
+				fmt.Println("Error: TIDAK BISA PEMBAGIAN DENGAN 0")
+			}
 
 		}
 
