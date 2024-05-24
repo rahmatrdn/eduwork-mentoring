@@ -1,13 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main() {
-	var name = "Fani Andrianto"
-	age := 25
-	siswa := true
+func main () {
+	const pi = 3.14159
 
-	fmt.Println("name : ", name)
-	fmt.Println("age : ", age)
-	fmt.Println("siswa : ", siswa)
+	var radius float64 = 5.0
+	var area float64
+
+	area = pi * radius * radius
+
+	fmt.Println("Area of the circle:", area)
 }
