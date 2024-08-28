@@ -5,11 +5,11 @@ import (
 )
 
 const (
-	DollartoRupiah          = 15573.00
-	EurotoRupiah            = 17191.58
-	PoundsterlingtoRupiah   = 20169.64
-	YentoRupiah             = 106.14
-	maxDollarExchange      = 1000
+	RupiahtoDollar          = 0.000065
+	EurotoDollar            = 1.12
+	PoundsterlingtoDollar   = 1.32
+	YentoDollar             = 0.0069
+	maxDollarExchange		= 1000
 )
 
 func main() {
@@ -19,11 +19,18 @@ func main() {
 		var jumlah float64
 		var pilihan int
 
-		fmt.Print("Masukkan jumlah Rupiah yang ingin dikonversi: ")
+		fmt.Print("Masukkan jumlah Dollar yang ingin dikonversi (max=$1000): ")
 		fmt.Scanln(&jumlah)
 
+
+		if jumlah > 1000 {
+			fmt.Println("Maaf, jumlah konversi melebihi batas maksimum 1000 Dollar.")
+			fmt.Println("Silakan coba lagi dengan jumlah yang lebih kecil.")
+			continue
+		}
+
 		fmt.Println("\nPilih mata uang tujuan:")
-		fmt.Println("1. Dollar AS")
+		fmt.Println("1. Rupiah")
 		fmt.Println("2. Euro")
 		fmt.Println("3. Poundsterling")
 		fmt.Println("4. Yen Jepang")
@@ -35,23 +42,23 @@ func main() {
 
 		switch pilihan {
 		case 1:
-			hasil = jumlah / DollartoRupiah
-			matauang = "Dollar AS"
+			hasil = jumlah / RupiahtoDollar
+			matauang = "Rupiah"
 		case 2:
-			hasil = jumlah / EurotoRupiah
+			hasil = jumlah / EurotoDollar
 			matauang = "Euro"
 		case 3:
-			hasil = jumlah / PoundsterlingtoRupiah
+			hasil = jumlah / PoundsterlingtoDollar
 			matauang = "Poundsterling"
 		case 4:
-			hasil = jumlah / YentoRupiah
+			hasil = jumlah / YentoDollar
 			matauang = "Yen Jepang"
 		default:
 			fmt.Println("Pilihan tidak valid")
 			continue
 		}
 
-		fmt.Printf("%.2f Rupiah = %.2f %s\n", jumlah, hasil, matauang)
+		fmt.Printf("%.2f Dollar = %.2f %s\n", jumlah, hasil, matauang)
 
 		var lanjut string
 		fmt.Print("\nApakah Anda ingin melakukan konversi lagi? (y/n): ")
