@@ -41,7 +41,7 @@ product-management/
 1. Clone repository
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/rahmatrdn/eduwork-mentoring/tree/fani>
 cd product-management
 ```
 
